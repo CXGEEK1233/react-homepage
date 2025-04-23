@@ -1,14 +1,14 @@
 export const profile: profile = {
     sitename: "KumaKorin",
-    names: ["KumaKorin", "熊こりん", "熊可狸", "阿狸丶A"],
+    names: ["残芯Geek", "老黄你的显卡掉了", "AFK", GEFORCE P90"],
     description: "My existence is a perpetual miracle to me.",
     image: "https://m1.miaomc.cn/uploads/20210623_b735dde7c665d.jpeg",
     socialLinks: {
-        github: "https://github.com/KumaKorin",
+        github: "https://github.com/CXGEEK1233",
         youtube: "https://www.youtube.com/@KumaKorin",
-        bilibili: "https://space.bilibili.com/37078929",
-        telegram: "https://t.me/KumaKorin",
-        email: "mailto:kumakorin@duck.com"
+        bilibili: "https://space.bilibili.com/19279812",
+        telegram: "https://t.me",
+        email: "afk@miaomc.cn"
     }
 };
 
