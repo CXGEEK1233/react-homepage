@@ -1,6 +1,6 @@
 export const profile: profile = {
     sitename: "残芯Geek",
-    names: ["残芯Geek", "老黄你的显卡掉了", "AFK", GEFORCE P90"],
+    names: ["残芯Geek", "老黄你的显卡掉了", "AFK", "GEFORCE P90"],
     description: "图吧垃圾佬",
     image: "https://m1.miaomc.cn/uploads/20210110_f84cc649a0832.jpg",
     socialLinks: {

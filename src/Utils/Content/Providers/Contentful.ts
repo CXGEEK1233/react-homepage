@@ -48,40 +48,55 @@ interface getPostsListShape {
 
 export const getPostsList = async (offset: number, locale?: string | "zh-hans"): Promise<getPostsListShape> => {
 
-    const rawOrderType = import.meta.env.VITE_CONTENTFUL_BLOG_ORDER_TYPE || 'createdAt';
-    const orderType = rawOrderType === 'createdAt' ? '-sys.createdAt' : '-fields.publishedTime';
+    const PostList: getPostsListShape = {
+        items: [
+            {
+                title: "还没搞好！",
+                description: "111111",
+                slug: "123123",
+                publishedTime: "114514"
+            }
+        ],
+        total: 1,
+    }
 
-    const selectedFields: selectShape = [
-        'fields.blogTitle',
-        'fields.blogDescription',
-        'fields.blogSlug',
-        rawOrderType === 'createdAt' ? 'sys.createdAt' : 'fields.publishedTime',
-        'fields.isPinned',
-    ];
+    return PostList
+    offset;
+    locale
+    // const rawOrderType = import.meta.env.VITE_CONTENTFUL_BLOG_ORDER_TYPE || 'createdAt';
+    // const orderType = rawOrderType === 'createdAt' ? '-sys.createdAt' : '-fields.publishedTime';
 
-    const validOffset = Number.isFinite(offset) ? offset : 0;
-    const validItemsLimit = Number.isFinite(itemsLimit) ? itemsLimit : 10;
+    // const selectedFields: selectShape = [
+    //     'fields.blogTitle',
+    //     'fields.blogDescription',
+    //     'fields.blogSlug',
+    //     rawOrderType === 'createdAt' ? 'sys.createdAt' : 'fields.publishedTime',
+    //     'fields.isPinned',
+    // ];
 
-    const res = await client.getEntries({
-        content_type: blogModel,
-        order: [orderType], // 将字符串包装为数组
-        limit: validItemsLimit,
-        skip: validOffset * validItemsLimit,
-        select: selectedFields,
-        ...(i18n && { locale: locale }),
-    });
+    // const validOffset = Number.isFinite(offset) ? offset : 0;
+    // const validItemsLimit = Number.isFinite(itemsLimit) ? itemsLimit : 10;
 
-    return {
-        items: res.items.map((item) => ({
-            title: typeof item.fields.blogTitle === 'string' ? item.fields.blogTitle : '',
-            description: typeof item.fields.blogDescription === 'string' ? item.fields.blogDescription : '',
-            slug: typeof item.fields.blogSlug === 'string' ? item.fields.blogSlug : '',
-            publishedTime: rawOrderType === 'createdAt' ? item.sys.createdAt.toString() : item.fields.publishedTime!.toString(),
+    // const res = await client.getEntries({
+    //     content_type: blogModel,
+    //     order: [orderType], // 将字符串包装为数组
+    //     limit: validItemsLimit,
+    //     skip: validOffset * validItemsLimit,
+    //     select: selectedFields,
+    //     ...(i18n && { locale: locale }),
+    // });
 
-            isPinned: typeof item.fields.isPinned === 'boolean' ? item.fields.isPinned : false,
-        })),
-        total: res.total,
-    };
+    // return {
+    //     items: res.items.map((item) => ({
+    //         title: typeof item.fields.blogTitle === 'string' ? item.fields.blogTitle : '',
+    //         description: typeof item.fields.blogDescription === 'string' ? item.fields.blogDescription : '',
+    //         slug: typeof item.fields.blogSlug === 'string' ? item.fields.blogSlug : '',
+    //         publishedTime: rawOrderType === 'createdAt' ? item.sys.createdAt.toString() : item.fields.publishedTime!.toString(),
+
+    //         isPinned: typeof item.fields.isPinned === 'boolean' ? item.fields.isPinned : false,
+    //     })),
+    //     total: res.total,
+    // };
 };
 
 // 获取文章内容
