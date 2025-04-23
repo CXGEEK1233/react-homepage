@@ -34,6 +34,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ articleId, articleTitle, articleDes
             </div>
         </div>
     )
+    articleId
 }
 
 export default BlogCard
