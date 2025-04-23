@@ -1,7 +1,7 @@
 export const profile: profile = {
-    sitename: "KumaKorin",
+    sitename: "残芯Geek",
     names: ["残芯Geek", "老黄你的显卡掉了", "AFK", GEFORCE P90"],
-    description: "My existence is a perpetual miracle to me.",
+    description: "图吧垃圾佬",
     image: "https://m1.miaomc.cn/uploads/20210110_f84cc649a0832.jpg",
     socialLinks: {
         github: "https://github.com/CXGEEK1233",
