@@ -2,7 +2,7 @@ export const profile: profile = {
     sitename: "KumaKorin",
     names: ["残芯Geek", "老黄你的显卡掉了", "AFK", GEFORCE P90"],
     description: "My existence is a perpetual miracle to me.",
-    image: "https://m1.miaomc.cn/uploads/20210623_b735dde7c665d.jpeg",
+    image: "https://m1.miaomc.cn/uploads/20210110_f84cc649a0832.jpg",
     socialLinks: {
         github: "https://github.com/CXGEEK1233",
         youtube: "https://www.youtube.com/@KumaKorin",
