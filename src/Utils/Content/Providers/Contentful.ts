@@ -3,19 +3,19 @@ import { Document } from '@contentful/rich-text-types';
 
 // 配置 dotenv
 const blogModel = import.meta.env.VITE_CONTENTFUL_BLOG_MODEL || '';
-const itemsLimit = parseInt(import.meta.env.VITE_BLOG_ITEMS_PER_PAGE) || 10;
+// const itemsLimit = parseInt(import.meta.env.VITE_BLOG_ITEMS_PER_PAGE) || 10;
 const i18n: boolean = import.meta.env.VITE_I18N === 'true';
 
 // 修改 selectShape 类型，支持 sys.createdAt
-type selectShape = (
-    | "fields.blogTitle"
-    | "fields.blogDescription"
-    | "fields.blogSlug"
-    | "fields.publishedTime"
-    | "fields.isPinned"
-    | "fields.blogContent"
-    | "sys.createdAt"
-)[];
+// type selectShape = (
+//     | "fields.blogTitle"
+//     | "fields.blogDescription"
+//     | "fields.blogSlug"
+//     | "fields.publishedTime"
+//     | "fields.isPinned"
+//     | "fields.blogContent"
+//     | "sys.createdAt"
+// )[];
 
 // 创建 Contentful 客户端
 const client = createClient({
